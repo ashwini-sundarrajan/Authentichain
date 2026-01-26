@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #001B4A;
+  height: 700px;
+  color: #D2E7EC;
+  position: relative;   /* allows absolute nav */
+}
+
+/* NAV stays at top */
+.nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  display: flex;
+  gap: 70px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+}
+button a{
+  text-decoration: none;
+  color: #E9F9FF;
+  background-color: #001B4A;
+  padding: 10px 40px;
+  border: solid 1px #E9F9FF;
+  border-radius: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+}
+
+button a:hover{
+    background-color: #E9F9FF;
+    border: 1px solid #E9F9FF;
+    padding: 10px 40px;
+    border-radius: 30px;
+    font-size: 25px;
+    color: #162B3A;
+}
+
+
+/* CENTER WRAPPER */
+.center-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* TITLE */
+.titl {
+  font-family: "Cinzel", serif;
+  font-weight: 30;
+  font-size: 100px;
+  text-align: center;
+}
+
+.icon {
+    background-color: #D2E7EC;
+    padding: 10px 15px;
+    border-radius: 100%;
+    font-size: 30px;
+}
+
+
+
+
+.subtitle {
+    font-family: "Lato", sans-serif;
+    padding-top: 10px;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.why {
+    padding: 30px;
+}
+
+.why h1 {
+    color: #162B3A;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 100;
+}
+
+.why p {
+    font-family: "Cormorant Garamond", serif;
+    color: #162B3A;
+    font-size: 20px;
+    text-indent: 40px;
+    padding-top: 30px;
+    line-height: 40px;
+}
+
+
+.steps-section {
+  padding: 80px 20px;
+}
+
+
+
+/* Grid: 2 top, 1 centered bottom */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  gap: 80px 500px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.step-card:nth-child(3) {
+  grid-column: 1 / span 2;
+  justify-self: center;
+}
+ 
+
+/* Card */
+.step-card {
+  width: 400px;
+  height: 400px;
+  background: #0a2a5c;
+  color: #ffffff;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+.step-card p {
+  font-size: 30px;
+}
+
+
+/* Icons */
+.step-icon {
+  width: 180px;
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d2e7ec;
+  border-radius: 16px;
+  color: #d2e7ec;
+  font-size: 80px;
+  box-sizing: border-box;
+}
+
+
+.button-area{
+  background-color: #001B4A;
+  height: 500px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+
+.button-area p {
+  color: #E9F9FF;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 1px solid #E9F9FF;
+  padding: 10px 40px;
+  font-family: "Cormorant Garamond", serif;
+  border-radius: 30px;
+  font-size: 30px;
+  color: #E9F9FF;
+}
+
+.secondary:hover {
+  background-color: #E9F9FF;
+  border: 1px solid #E9F9FF;
+  padding: 10px 40px;
+  border-radius: 30px;
+  font-size: 30px;
+  color: #162B3A;
+}
