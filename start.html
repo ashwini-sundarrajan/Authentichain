@@ -42,11 +42,84 @@
         </div>
     </div>
 
+    <form action="">
+        <!--Book Title-->
+    <div class="titlebox">
+        <h1>Book Title</h1>
+        <div class="titlecontent">
+            <p>Enter your title as it appears on the book cover. If you add a subtitle, a colon will be inserted between the title and subtitle. Before continuing, check your spelling since this field cannot be updated after publication.</p>
+            <div class="title">
+                <label for="title" class="lables">Title</label>
+                <input type="text" name="title" required>
+            </div>
+            <div class="subtitlein">
+                <label for="subtitle" class="lables">subtitle (Optional)</label>
+                <input type="text" name="subtitle">
+            </div>
+        </div>
+    </div>
 
-    <!--Book Title-->
-    <div>
-        
+    <div class="titlebox">
+        <h1>Author</h1>
+        <div class="titlecontent">
+            <p>Enter the primary author or contributor. Pen names are allowed. To include a middle name or prefix, add it to the first name field. Suffixes should be added to the last name.</p>
+            <div class="title">
+                <label for="author" class="lables">Primary Author</label>
+                <input type="text" name="author" required>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="titlebox">
+        <h1>contributors</span></h1>
+        <div class="titlecontent">
+            <p>Add up to 9 contributors. They’ll display using the order you enter below.</p>
+            <div class="title">
+                <label for="contributors" class="lables">Contributors (Optional)</label>
+                <div class="contributor-row">
+                    <select name="#" id="#" class="role-select">
+                    <option>Author</option>
+                    <option>Illustrator</option>
+                    <option>Editor</option>                               
+                    <option>Translator</option>
+                </select>
+
+                <input type="text" name="contributors" class="contributor" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="titlebox">
+        <h1>Description</h1>
+        <div class="titlecontent">
+            <p>Summarize your book. This will be your product description, so customers can learn more about your book.</p>
+            <div class="title">
+                <label for="description" class="lables">Description</label>
+                <textarea name="description"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="radiobox">
+        <div class="titlecontent">
+            <h1>Authorship Rights</h1>
+            <div class="titlecontent">
+                <label for="rights">
+                    <input type="radio" name="rights" value="human"/>Authentically human
+                    <input type="radio" name="rights" value="co-ai"/>Co-Authored by AI
+                    <input type="radio" name="rights" value="ai"/>AI Crafted
+                </label>
+            </div>
+        </div>
+    </div>
+
+    </form>
+
+    <div class="buttons">
+        <button class="cancel">Cancel</button>
+        <button class="continue">Save & Continue</button>
     </div>
 </body>
 </html>
-

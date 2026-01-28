@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    
 }
 
 .titl {
@@ -54,3 +53,186 @@
     font-size: 18px;
 }
 
+.titlebox {
+    background-color: #E9F9FF;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 275px;
+    width: 940px;
+    padding: 40px;
+
+    display: grid;
+    grid-template-columns: 200px 1fr; /* left title | right content */
+    column-gap: 60px;
+
+    box-sizing: border-box;
+}
+
+
+.titlebox h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 30;
+    font-size: 20px;
+    color: #162B3A;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.titlebox p {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    color: #162B3A;
+}
+
+
+.titlecontent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.titlecontent input {
+    font-family: "Cormorant Garamond", serif;
+    color: #162B3A;
+    width: 550px;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: #E9F9FF;
+    border: 1px solid #001B4A;
+    border-radius: 6px;
+}
+
+.titlecontent input:focus {
+  outline: none;
+  border: 1px solid #001B4A; /* same as normal border */
+}
+
+
+.title {
+    padding-top: 20px;
+    display: flex;          /* 👈 missing line */
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+
+.subtitlein {
+    padding-top: 20px;
+}
+
+.lables {
+    font-family: "Lato", sans-serif;
+    color: #162B3A;
+}
+
+
+.role-select {
+    font-family: "Lato", sans-serif;
+    width: 160px;
+    padding: 13px 10px;
+    background-color: #001B4A;
+    margin-top: 20px;
+    color: #E9F9FF;
+    border: none;
+}
+
+.contributor-row {
+  display: flex;          /* 👈 same line */
+  align-items: center;
+  gap: 16px;
+}
+
+
+.contributor-row input {
+  width: 350px;
+}
+
+textarea {
+    margin-top: 10px;
+    height: 100px;
+    background-color: #E9F9FF;
+    border: 1px solid #001B4A;
+    padding: 20px;
+}
+
+textarea:focus {
+  outline: none;
+  border: 1px solid #001B4A; /* same as normal border */
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.radio-option {
+  display: flex;            /* radio + text SAME LINE */
+  align-items: center;
+  gap: 12px;
+
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #162B3A;
+  cursor: pointer;
+}
+
+.radio-option input {
+  margin: 0;
+}
+
+
+.radiobox {
+    background-color: #E9F9FF;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 275px;
+    width: 860px;
+    padding: 40px;
+
+}
+
+.radiobox h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 30;
+    font-size: 20px;
+    color: #162B3A;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.radiobox p {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    color: #162B3A;
+}
+
+label {
+  display: block;
+  width: 100%;
+}
+
+.buttons {
+    margin: 70px;
+    margin-left: 900px;
+}
+
+.cancel {
+    background-color: #E9F9FF;
+    color: #162B3A;
+    padding: 10px 30px;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+
+.continue {
+    background-color: #E9F9FF;
+    color: #162B3A;
+    padding: 10px 30px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
