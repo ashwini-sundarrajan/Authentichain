@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Details | AuthentiChain</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:wght@300..700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- CSS -->
@@ -18,47 +17,45 @@
 </head>
 <body>
 
-<div class="profile-page">
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="index.html" class="back">
+    <i class="fa-solid fa-arrow-left"></i> 
+    <span>AUTHENTICHAIN</span>
+  </a>
+</div>
+
+<div class="layout">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h2>AUTHENTICHAIN</h2>
-
-    <nav>
-      <a href="user-details.html" class="active">User Details</a>
-      <a href="history.html">History</a>
-      <a href="draft.html">Draft</a>
-    </nav>
+    <a href="user-details.html" class="active">User Details</a>
+    <a href="history.html">History</a>
+    <a href="draft.html">Draft</a>
   </aside>
 
-  <!-- MAIN CONTENT -->
+  <!-- CONTENT -->
   <main class="content">
-    <h1>User Details</h1>
-
     <div class="card">
-      <div class="user-header">
+
+      <div class="profile-head">
         <div class="avatar">
           <i class="fa-regular fa-user"></i>
         </div>
-        <h3>ASHWINI SUNDAR RAJAN</h3>
+        <h3>ASHWINI SUNDARRAJAN</h3>
       </div>
 
       <form>
         <label>Full name</label>
-        <input type="text" placeholder="Enter full name">
+        <input type="text">
 
-        <label>Username</label>
-        <input type="text" placeholder="Enter username">
+        <label>Literary Name</label>
+        <input type="text">
 
         <label>E-mail</label>
-        <input type="email" placeholder="Enter email">
+        <input type="email">
 
-        <button type="submit">Save changes</button>
-      </form>
+        
+<div class="button-area">
+        <button class="secondary">Save changes</button>
     </div>
-  </main>
-
-</div>
-
-</body>
-</html>
