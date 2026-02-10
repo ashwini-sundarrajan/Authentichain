@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>History | AuthentiChain</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="history.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="home.html" class="back">
+    <i class="fa-solid fa-arrow-left"></i> 
+    <span>AUTHENTICHAIN</span>
+  </a>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="user-details.html" >User Details</a>
+    <a href="history.html" class="active">History</a>
+    <a href="draft.html">Draft</a>
+  </aside>
+
+  
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- SEARCH + FILTER -->
+    <div class="toolbar">
+      <div class="search-box">
+        <input type="text" placeholder="Search your book here">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="filter">
+        <i class="fa-solid fa-sliders"></i>
+        <span>Filters</span>
+      </div>
+    </div>
+
+    <!-- HISTORY LIST -->
+    <div class="history-card">
+
+      <!-- ITEM 1 -->
+      <div class="history-item">
+        <img src="book1.jpg" alt="Book cover">
+
+        <div class="history-info">
+          <p class="date">Authenticated on Nov 09</p>
+          <h3>Whispers in the Dark</h3>
+          <p class="author">Authored by Ashwini Sundar Rajan</p>
+          <p class="meta">AI score – None</p>
+          <p class="meta">Plagiarism – None</p>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow" onclick="openOverlay()"/></i>
+      </div>
+    <hr/>
+      <!-- ITEM 2 -->
+      <div class="history-item">
+        <img src="book2.jpg" alt="Book cover">
+
+        <div class="history-info">
+          <p class="date">Authenticated on Dec 07 2024</p>
+          <h3>Me & You</h3>
+          <p class="author">Authored by Ashwini Sundar Rajan</p>
+          <p class="meta">AI score – 2%</p>
+          <p class="meta">Plagiarism – None</p>
+        </div>
+      
+        <i class="fa-solid fa-chevron-right arrow"></i>
+      </div>
+    <hr/>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay">
+
+  <div class="overlay-card">
+    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+
+    <h2>Whispers in the Dark</h2>
+
+    <div class="overlay-content">
+      <img src="book1.jpg" alt="Book cover">
+
+      <div class="details">
+        <p><strong>Author:</strong> Ashwini Sundar Rajan</p>
+        <p><strong>AI score:</strong> None</p>
+        <p><strong>Plagiarism:</strong> None</p>
+        <p><strong>Timestamp:</strong> Nov 09, 2024</p>
+        <p><strong>Blockchain:</strong> Proof Verified</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function openOverlay() {
+    document.getElementById("overlay").style.display = "flex";
+  }
+
+  function closeOverlay() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  // Close when clicking outside card
+  window.addEventListener("click", function (e) {
+    const overlay = document.getElementById("overlay");
+    if (e.target === overlay) {
+      overlay.style.display = "none";
+    }
+  });
+</script>
+
+
+</body>
+</html>

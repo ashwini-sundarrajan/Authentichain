@@ -23,10 +23,10 @@ body {
 }
 
 .top-bar .back i{
-  font-size: 20px;
+  font-size: 18px;
 }
 .top-bar .back span{
-  font-size: 40px;
+  font-size: 28px;
   letter-spacing: 1px;
 }
 
@@ -50,7 +50,7 @@ body {
   padding: 12px 10px;
   border-radius: 6px;
   margin-bottom: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 /* ACTIVE / SELECTED STATE */
@@ -116,7 +116,7 @@ form input {
 form button {
   margin-top: 30px;
   background-color: #001b4a;
-  color: #E9F9FF;;
+  color: #E9F9FF;
   border: none;
   padding: 10px 28px;
   border-radius: 20px;

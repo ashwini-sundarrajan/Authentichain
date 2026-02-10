@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cormorant Garamond", serif;
+}
+
+body {
+  background-color: #E9F9FF;
+}
+
+/* Top bar */
+.top-bar {
+  background-color: #001b4a;
+  padding: 16px 30px;
+}
+
+.top-bar .back {
+  color: #E9F9FF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-bar .back i {
+  font-size: 18px;
+}
+
+.top-bar .back span {
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #001b4a;
+  padding: 30px 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #E9F9FF;
+  text-decoration: none;
+  padding: 14px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.sidebar a.active {
+  background-color: #E9F9FF;
+  color: #001b4a;
+  font-weight: bold;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  width:100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  position: relative;
+  width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #8aa1ad;
+  font-size: 17px;
+}
+
+.search-box i {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #001b4a;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.filter {
+    margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #001b4a;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.draft-card {
+  background-color: #eaf6ff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 900px;
+}
+
+.draft-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.draft-item img {
+  width: 80px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.draft-info h3 {
+  font-size: 22px;
+  margin: 6px 0;
+}
+
+.date {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.author {
+  font-size: 16px;
+}
+
+.arrow {
+  margin-left: auto;
+  font-size: 18px;
+  color: #001b4a;
+}
+
