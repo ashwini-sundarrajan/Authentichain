@@ -179,8 +179,8 @@ body {
 /* OVERLAY CARD */
 .overlay-card {
   background-color: #eaf6ff;
-  padding: 30px;
-  width: 600px;
+  padding: 100px;
+  width: 800px;
   border-radius: 16px;
   position: relative;
 }
