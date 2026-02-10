@@ -62,10 +62,10 @@
           <p class="date">Authenticated on Nov 09</p>
           <h3>Whispers in the Dark</h3>
           <p class="author">Authored by Ashwini Sundar Rajan</p>
-          <p class="meta">AI score – None</p>
+          <p class="meta">AI score – 45%</p>
           <p class="meta">Plagiarism – None</p>
         </div>
-        <i class="fa-solid fa-chevron-right arrow" onclick="openOverlay()"/></i>
+        <i class="fa-solid fa-chevron-right arrow" onclick="openOverlay('overlay-whispers')"></i>
       </div>
     <hr/>
       <!-- ITEM 2 -->
@@ -76,11 +76,11 @@
           <p class="date">Authenticated on Dec 07 2024</p>
           <h3>Me & You</h3>
           <p class="author">Authored by Ashwini Sundar Rajan</p>
-          <p class="meta">AI score – 2%</p>
+          <p class="meta">AI score – 12%</p>
           <p class="meta">Plagiarism – None</p>
         </div>
       
-        <i class="fa-solid fa-chevron-right arrow"></i>
+        <i class="fa-solid fa-chevron-right arrow"    onclick="openOverlay('overlay-me-you')"></i>
       </div>
     <hr/>
     </div>
@@ -89,11 +89,11 @@
 
 </div>
 
-<!-- OVERLAY -->
-<div class="overlay" id="overlay">
+<!-- OVERLAY1 -->
+<div class="overlay" id="overlay-whispers">
 
   <div class="overlay-card">
-    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+    <span class="close-btn" onclick="closeOverlay('overlay-whispers')">&times;</span>
 
     <h2>Whispers in the Dark</h2>
 
@@ -102,10 +102,35 @@
 
       <div class="details">
         <p><strong>Author:</strong> Ashwini Sundar Rajan</p>
-        <p><strong>AI score:</strong> None</p>
+        <p><strong>AI score:</strong> 45%</p>
         <p><strong>Plagiarism:</strong> None</p>
-        <p><strong>Timestamp:</strong> Nov 09, 2024</p>
-        <p><strong>Blockchain:</strong> Proof Verified</p>
+        <p><strong>Timestamp:</strong> Jan 11, 2024</p>
+        <p><strong>Authorship:</strong> Partially Human</p>
+        <br><strong><u>View your certificate here</u>  </strong>
+      </div>
+    </div>
+  </div>
+  </div> 
+</div>  
+
+<!-- OVERLAY2 -->
+<div class="overlay" id="overlay-me-you">
+
+  <div class="overlay-card">
+    <span class="close-btn" onclick="closeOverlay('overlay-me-you')">&times;</span>
+
+    <h2>Me & You</h2>
+
+    <div class="overlay-content">
+      <img src="book2.jpg" alt="Book cover">
+
+      <div class="details">
+        <p><strong>Author:</strong> Ashwini Sundar Rajan</p>
+        <p><strong>AI score:</strong> 12%</p>
+        <p><strong>Plagiarism:</strong> None</p>
+        <p><strong>Timestamp:</strong> Nov 23, 2025</p>
+        <p><strong>Authorship:</strong> Authentically Human</p>
+        <br><strong><u>View your certificate here</u></strong>
       </div>
     </div>
   </div>
@@ -113,22 +138,23 @@
 </div>
 
 <script>
-  function openOverlay() {
-    document.getElementById("overlay").style.display = "flex";
+  function openOverlay(id) {
+    document.getElementById(id).style.display = "flex";
   }
 
-  function closeOverlay() {
-    document.getElementById("overlay").style.display = "none";
+  function closeOverlay(id) {
+    document.getElementById(id).style.display = "none";
   }
 
-  // Close when clicking outside card
   window.addEventListener("click", function (e) {
-    const overlay = document.getElementById("overlay");
-    if (e.target === overlay) {
-      overlay.style.display = "none";
-    }
+    document.querySelectorAll(".overlay").forEach(overlay => {
+      if (e.target === overlay) {
+        overlay.style.display = "none";
+      }
+    });
   });
 </script>
+
 
 
 </body>

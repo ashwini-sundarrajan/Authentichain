@@ -276,7 +276,9 @@ button a:hover{
   border-radius: 30px;
   font-size: 30px;
   color: #E9F9FF;
+  text-decoration: none;
 }
+
 
 .secondary:hover {
   background-color: #E9F9FF;
