@@ -144,6 +144,17 @@
   gap: 16px;
 }
 
+.add-btn {
+    margin-top: 10px;
+    width: 150px;
+    padding: 10px 5px;
+    cursor: pointer;
+    border: solid 1px #001B4A;
+    border-radius: 15px;
+    background-color: #E9F9FF;
+
+}
+
 
 .contributor-row input {
   width: 350px;
