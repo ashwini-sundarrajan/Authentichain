@@ -204,3 +204,91 @@
     margin: 70px;
     margin-left: 900px;
 }
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-card {
+  background: #e9f6fb;
+  width: 600px;
+  padding: 100px;
+  border-radius: 0px;
+  position: relative;
+}
+
+.overlay-card h2 {
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.overlay-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+
+
+.details p {
+  margin-bottom: 10px;   
+  line-height: 1.6;      
+}
+
+
+.overlay-buttons button {
+  background: #001B4A;
+  color: white;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-content: end;
+}
+
+.warning {
+  color: red;
+  margin-top: 20px;
+}
+
+
+/* Success overlay */
+.success-card {
+  background: #001B4A;
+  width: 600px;
+  padding: 30px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.success-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+
+.success-content i {
+  font-size: 28px;
+  color: #4CAF50;
+}
+
+.success-content h2 {
+  font-size: 24px;
+  font-family: "Cinzel", serif;
+}
+
+
+
+
+

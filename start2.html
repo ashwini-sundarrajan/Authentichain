@@ -66,9 +66,83 @@
 
   <!--BOTTOM BUTTONS -->
   <div class="buttons">
-        <button type="button" class="cancel" id="saveDraftBtn">Save as Draft</button>
-        <button type="submit" class="continue">Submit</button>
+        <button type="button" class="cancel" id="saveDraftBtn" >Save as Draft</button>
+        <button type="button" class="continue" onclick="openAuthOverlay()">Submit</button>
   </div>
+
+<!-- AUTHENTICATION OVERLAY -->
+<div class="overlay" id="authOverlay">
+
+  <div class="overlay-card">
+
+    <h2>Friends don’t lie</h2>
+
+    <div class="overlay-content">
+      <div class="details">
+        <p><strong>Author :</strong> Ashwini Sundarrajan</p>
+        <p><strong>Plagiarism :</strong> None</p>
+        <p><strong>AI content :</strong> 60%</p>
+        <p><strong>Time Stamp :</strong> 08/10/2026</p>
+        <p><strong>Authorship :</strong> Authentically human</p>
+
+        <p class="warning">
+          ⚠ The manuscript is not authentically human as stated. However,
+          it can be uploaded under AI crafted.
+        </p>
+
+        <div class="overlay-buttons">
+          <button onclick="submitSuccess()">Continue</button>
+          <button onclick="goToStart1()">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="overlay" id="successOverlay">
+
+  <div class="success-card">
+    <div class="success-content">
+      <i class="fa-solid fa-check"></i>
+      <h2>Submitted successfully</h2>
+    </div>
+  </div>
+
+</div>
+
+
+
+<script>
+function openAuthOverlay() {
+  document.getElementById("authOverlay").style.display = "flex";
+}
+
+function closeAuthOverlay() {
+  document.getElementById("authOverlay").style.display = "none";
+}
+
+function submitSuccess() {
+  // Close auth overlay
+  closeAuthOverlay();
+
+  // Show success overlay
+  document.getElementById("successOverlay").style.display = "flex";
+
+  // After 2 seconds → go to home page
+  setTimeout(function() {
+    window.location.href = "home.html";
+  }, 2000);
+}
+
+function goToStart1() {
+  window.location.href = "start.html";
+}
+</script>
+
+
+
 
     
 </body>
