@@ -94,6 +94,8 @@
             </div>
         </div>
 
+        
+
         <!-- Add button -->
         <button type="button" class="add-btn" onclick="addContributor()">
             Add Contributor
@@ -127,7 +129,7 @@
     </div>
 
     <div class="buttons">
-        <button type="button" class="cancel" id="saveDraftBtn">Save as Draft</button>
+        <button type="button" class="cancel" id="saveDraftBtn" onclick="goNext()">Save as Draft</button>
         <button type="submit" class="continue">Save & Continue</button>
 
     </div>
@@ -137,51 +139,6 @@
 <<<<<<< HEAD
 =======
 
-<section id="start2" style="display:none;">
-
-  <!-- TOP BAR -->
-  <div class="top-bar2">
-    <a href="#" onclick="goBack()">
-      <i class="fa-solid fa-arrow-left"></i>
-        <span>AuthentiChain<span>
-    </div>
-    </a>
-  </div>
-
-  <!-- PROGRESS BOXES -->
-   <div class="progress-wrapper">
-  <div class="progressbar1">
-      <h1>Book details</h1>
-      <p><span class="dot green"></span> Complete</p>
-    </div>
-
-    <div class="progressbar2">
-      <h1>Book content</h1>
-      <p><span class="dot blue"></span> In progress</p>
-    </div>
-   </div>
-
-  <!-- MANUSCRIPT BOX -->
-  <div class="upload-box">
-    <h1>Manuscript</h1>
-    <p>Upload a Manuscript PDF file in the preferred format.</p>
-    <button class="upload-btn">Upload manuscript</button>
-  </div>
-
-  <!-- BOOK COVER BOX -->
-  <div class="upload-box">
-    <h1>Book cover</h1>
-    <p>Upload cover image in JPG format.</p>
-    <button class="upload-btn">Upload book cover</button>
-  </div>
-
-  <!--BOTTOM BUTTONS -->
-  <div class="bottom-buttons">
-        <button type="button" class="cancel" id="saveDraftBtn">Save as Draft</button>
-        <button type="submit" class="continue">Submit</button>
-  </div>
-
-</section>
 
 <!-- SUCCESS MESSAGE OVERLAY -->
 <div id="draftMessage" class="draft-message">
@@ -191,41 +148,15 @@
   </div>
 </div>
 
-<!--draft button-->
-<script>
-  const draftButtons = document.querySelectorAll(".cancel");
-
-  draftButtons.forEach(button => {
-    button.addEventListener("click", function () {
-      const message = document.getElementById("draftMessage");
-      message.style.display = "block";
-
-      setTimeout(() => {
-        window.location.href = "home.html";   // 👈 redirect here
-      },500); // waits 2 seconds before redirect
-    });
-  });
-</script>
 
 
 
 
 >>>>>>> 1b5ac74dab4d1b9ab77c887e40005a0b794a7395
   
-<script>
-  document.querySelector(".continue").addEventListener("click", function(e){
-      e.preventDefault(); // stop form submit
+<script src="start.js">
 
-      document.getElementById("start1").style.display = "none";
-      document.getElementById("start2").style.display = "block";
-  });
-
-  function goBack(){
-      document.getElementById("start2").style.display = "none";
-      document.getElementById("start1").style.display = "block";
-  }
 </script>
-
 
 
 
