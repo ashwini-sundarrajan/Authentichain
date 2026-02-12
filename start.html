@@ -181,6 +181,33 @@
 
 </section>
 
+<!-- SUCCESS MESSAGE OVERLAY -->
+<div id="draftMessage" class="draft-message">
+  <div class="draft-content">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Draft Saved successfully</span>
+  </div>
+</div>
+
+<!--draft button-->
+<script>
+  const draftButtons = document.querySelectorAll(".cancel");
+
+  draftButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const message = document.getElementById("draftMessage");
+      message.style.display = "block";
+
+      setTimeout(() => {
+        window.location.href = "home.html";   // 👈 redirect here
+      },500); // waits 2 seconds before redirect
+    });
+  });
+</script>
+
+
+
+
   
 <script>
   document.querySelector(".continue").addEventListener("click", function(e){
@@ -195,6 +222,8 @@
       document.getElementById("start1").style.display = "block";
   }
 </script>
+
+
 
 
 </body>
