@@ -1,16 +1,108 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const Book = require("./book"); // Import the model from book.js
+const bcrypt = require("bcryptjs");
+
+const Book = require("./book");       // Your existing model
+const User = require("./user"); // New User model
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+
+// ================== DATABASE ==================
 mongoose.connect("mongodb://127.0.0.1:27017/authentichain")
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
+
+// ================== AUTH ROUTES ==================
+
+// SIGNUP
+app.post("/signup", async (req, res) => {
+
+    try {
+
+        const { name, email, password } = req.body;
+
+        // Check if user exists
+        const oldUser = await User.findOne({ email });
+
+        if (oldUser) {
+            return res.status(400).json({
+                msg: "User already exists"
+            });
+        }
+
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const newUser = new User({
+            name,
+            email,
+            password: hashedPassword
+        });
+
+        await newUser.save();
+
+        res.json({
+            msg: "Signup successful"
+        });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({
+            msg: "Server error"
+        });
+    }
+
+});
+
+
+// LOGIN
+app.post("/login", async (req, res) => {
+
+    try {
+
+        const { email, password } = req.body;
+
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(400).json({
+                msg: "User not found"
+            });
+        }
+
+        // Compare passwords
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if (!isMatch) {
+            return res.status(400).json({
+                msg: "Invalid password"
+            });
+        }
+
+        res.json({
+            msg: "Login successful",
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email
+            }
+        });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({
+            msg: "Server error"
+        });
+    }
+
+});
+
+
 
 // 1. GET ALL DRAFTS (Required for draft.html)
 app.get("/drafts", async (req, res) => {

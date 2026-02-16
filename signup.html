@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inknut+Antiqua:wght@300..900&display=swap" rel="stylesheet">
+
+
+    <!--Icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!--stylesheet-->
+    <link rel="stylesheet" href="signup.css" />
+    
+</head>
+<body bgcolor="#E9F9FF">
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <h1>AuthentiChain</h1>
+        <p>Create your account</p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <div class="form-box">
+
+            <h2>Sign Up</h2>
+
+            <input type="text" id="name" placeholder="Full Name" required>
+
+            <input type="text" id="lname" placeholder="Literary Name" required>
+
+            <input type="email" id="email" placeholder="Email" required>
+
+            <input type="password" id="password" placeholder="Password" required>
+
+            <input type="password" id="password1" placeholder=" Re-Type Password" required>
+
+            <button onclick="login()">Create Account</button>
+
+            <p>
+                Already have an account?
+                <a href="signin.html">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="signin.js"></script>
+
+</body>
+</html>

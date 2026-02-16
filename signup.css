@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #001B4A;
+}
+
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT SIDE */
+.left {
+    width: 50%;
+    background: linear-gradient(to bottom right, #003399, #001B4A);
+    color: white;
+    
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+    color: #E9F9FF;
+}
+
+.left p {
+    font-size: 18px;
+    opacity: 0.9;
+    font-family: "Lato", sans-serif;
+    color: #E9F9FF;
+}
+
+/* RIGHT SIDE */
+.right {
+    width: 50%;
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORM BOX */
+.form-box {
+    width: 320px;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #001B4A;
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* INPUTS */
+.form-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    font-family: "Cormorant Garamond", serif;
+    border: 1px solid #001B4A;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-box input:focus {
+    outline: none;
+    border-color: #162B3A;
+}
+
+
+.form-box::placeholder{
+    font-family: "Cormorant Garamond", serif;
+    color:#001B4A;
+}
+
+/* BUTTON */
+.form-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+
+    background: #001B4A;
+    color: #E9F9FF;
+
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-box button:hover {
+    opacity: 0.9;
+}
+
+/* TEXT */
+.form-box p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #162B3A;
+}
+
+.form-box a {
+    color: #162B3A;
+    text-decoration: none;
+    font-style: italic;
+
+}
+
+.form-box a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        height: 50%;
+    }
+
+}
