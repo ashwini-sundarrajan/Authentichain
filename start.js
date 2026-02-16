@@ -1,16 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // ==============================
+    // VARIABLES
+    // ==============================
     let contributorCount = 1;
     const maxContributors = 9;
 
-    // Add Contributor
+
+    // ==============================
+    // ADD CONTRIBUTOR
+    // ==============================
     window.addContributor = function () {
+
         if (contributorCount >= maxContributors) {
             alert("You can add up to 9 contributors only.");
             return;
         }
 
         const container = document.getElementById("contributors-container");
+
+        if (!container) {
+            console.error("contributors-container not found");
+            return;
+        }
 
         const row = document.createElement("div");
         row.className = "contributor-row";
@@ -29,82 +41,113 @@ document.addEventListener("DOMContentLoaded", () => {
         contributorCount++;
     };
 
-    // Save & Continue
-    document.getElementById("bookForm").addEventListener("submit", async (e) => {
-        e.preventDefault();
 
-        const contributors = [];
+    // ==============================
+    // SAVE & CONTINUE (FORM SUBMIT)
+    // ==============================
+    const form = document.getElementById("bookForm");
 
-        document.querySelectorAll(".contributor-row").forEach(row => {
-            const role = row.querySelector("select").value;
-            const name = row.querySelector("input").value;
+    if (!form) {
+        console.error("bookForm not found!");
+    } else {
 
-            if (name.trim() !== "") {
-                contributors.push({ role, name });
+        form.addEventListener("submit", async (e) => {
+
+            e.preventDefault();
+
+            console.log("Save & Continue clicked"); // Debug
+
+            const titleInput = document.querySelector("input[name='title']");
+            const subtitleInput = document.querySelector("input[name='subtitle']");
+            const authorInput = document.querySelector("input[name='author']");
+            const descriptionInput = document.querySelector("textarea[name='description']");
+            const rightsInput = document.querySelector("input[name='rights']:checked");
+
+            const data = {
+                title: titleInput ? titleInput.value : "",
+                subtitle: subtitleInput ? subtitleInput.value : "",
+                author: authorInput ? authorInput.value : "",
+                description: descriptionInput ? descriptionInput.value : "",
+                rights: rightsInput ? rightsInput.value : null,
+                status: "in-progress"
+            };
+
+            console.log("Sending data:", data); // Debug
+
+            try {
+
+                const res = await fetch("http://localhost:3000/save-book", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (res.ok) {
+                    console.log("Saved successfully");
+                    window.location.href = "start2.html";
+                } else {
+                    console.error("Server error:", res.status);
+                    alert("Failed to save. Try again.");
+                }
+
+            } catch (error) {
+
+                console.error("Fetch error:", error);
+                alert("Server not responding.");
+
             }
+
         });
 
-        const data = {
-            title: document.querySelector("input[name='title']").value,
-            subtitle: document.querySelector("input[name='subtitle']").value,
-            author: document.querySelector("input[name='author']").value,
-            description: document.querySelector("textarea[name='description']").value,
-            rights: document.querySelector("input[name='rights']:checked")?.value,
-            contributors,
-            status: "in-progress"
-        };
+    }
 
-        const res = await fetch("http://localhost:3000/save-book", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+
+    // ==============================
+    // SAVE AS DRAFT
+    // ==============================
+    const draftBtn = document.getElementById("saveDraftBtn");
+
+    if (draftBtn) {
+
+        draftBtn.addEventListener("click", () => {
+
+            console.log("Save Draft clicked"); // Debug
+
+            // Show message
+            const message = document.getElementById("draftMessage");
+            if (message) {
+                message.style.display = "block";
+            }
+
+            // Redirect
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 800);
+
+
+            // Save in background
+            fetch("http://localhost:3000/save-book", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    status: "draft"
+                })
+            })
+            .then(() => {
+                console.log("Draft saved");
+            })
+            .catch(() => {
+                console.log("Draft saved locally only");
+            });
+
         });
 
-        const result = await res.json();
-
-        if (result.message === "Saved Successfully") {
-            window.location.href = "content.html";
-        }
-    });
-
-
-    // Save as Draft
-document.getElementById("saveDraftBtn").addEventListener("click", async () => {
-
-    const contributors = [];
-
-    document.querySelectorAll(".contributor-row").forEach(row => {
-        const role = row.querySelector("select").value;
-        const name = row.querySelector("input").value;
-
-        if (name.trim() !== "") {
-            contributors.push({ role, name });
-        }
-    });
-
-    const data = {
-        title: document.querySelector("input[name='title']").value,
-        subtitle: document.querySelector("input[name='subtitle']").value,
-        author: document.querySelector("input[name='author']").value,
-        description: document.querySelector("textarea[name='description']").value,
-        rights: document.querySelector("input[name='rights']:checked")?.value,
-        contributors,
-        status: "draft"   // 👈 IMPORTANT
-    };
-
-    await fetch("http://localhost:3000/save-book", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
-
-    // Go to home page
-    window.location.href = "home.html";
-});
-
+    } else {
+        console.warn("saveDraftBtn not found");
+    }
 
 });

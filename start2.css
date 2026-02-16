@@ -55,17 +55,13 @@
     font-family: "Cormorant Garamond", serif;
 }
 
-.status i {
+.incompleteicon{
     color: #001B4A;
     font-size: 18px;
 }
 
 .completeicon {
-    color: #001B4A;
-    background-color: green;
-   padding: 2px;
-    border-radius: 100%;
-    font-size: 1px;
+    color: green;
 }
 
 /* Progress */
