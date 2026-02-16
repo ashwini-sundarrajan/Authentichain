@@ -138,3 +138,33 @@ body {
     }
 
 }
+
+
+/* Draft Success Message */
+.draft-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #001B4A;
+  padding: 18px 40px;
+  border-radius: 4px;
+  display: none;
+  z-index: 9999;
+  min-width: 450px;
+}
+
+.draft-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #E9F9FF;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+}
+
+.draft-content i {
+  color: #2ecc71;
+  font-size: 28px;
+}
+

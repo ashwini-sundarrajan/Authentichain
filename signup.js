@@ -1,16 +1,21 @@
 async function signup() {
 
-    // Get values
-    const name = document.getElementById("name").value.trim();
+    // Get values (MATCH HTML IDs)
+    const fname = document.getElementById("fname").value.trim();
     const lname = document.getElementById("lname").value.trim();
-    const email = document.getElementById("email").value.trim();
+
+    const email = document
+        .getElementById("email")
+        .value
+        .trim()
+        .toLowerCase();
 
     const password = document.getElementById("password").value;
     const password1 = document.getElementById("password1").value;
 
 
     // Validation
-    if (!name || !lname || !email || !password || !password1) {
+    if (!fname || !lname || !email || !password || !password1) {
         alert("Please fill all fields");
         return;
     }
@@ -23,14 +28,13 @@ async function signup() {
 
     try {
 
-        // Send to backend
         const res = await fetch("http://localhost:3000/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name: name + " " + lname, // combine both names
+                name: fname + " " + lname, // combine name
                 email: email,
                 password: password
             })
@@ -42,15 +46,28 @@ async function signup() {
 
 
         if (res.ok) {
-            alert("Signup successful!");
-            window.location.href = "signin.html"; // go to login
+
+            // Show success message
+            const message = document.getElementById("draftMessage");
+            if (message) {
+                message.style.display = "block";
+            }
+
+            // Redirect after 1 second
+            setTimeout(() => {
+                window.location.href = "signin.html";
+            }, 1000);
+
         } else {
+
             alert(data.msg || "Signup failed");
+
         }
 
     } catch (error) {
 
         console.error("Signup error:", error);
+
         alert("Server not responding");
 
     }
