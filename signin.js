@@ -38,13 +38,19 @@ async function login() {
 
         if (res.ok) {
 
-            alert("Login successful!");
+            // Show success message
+            const message = document.getElementById("draftMessage");
+            if (message) {
+                message.style.display = "block";
+            }
+
+            // Redirect after 1 second
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 1000);
 
             // Save user info
             localStorage.setItem("user", JSON.stringify(data.user));
-
-            // Redirect
-            window.location.href = "home.html";
 
         } else {
 
